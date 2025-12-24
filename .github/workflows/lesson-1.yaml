@@ -8,3 +8,13 @@ jobs:
         runs-on: ubuntu-24.04
         steps:
             - run: echo "Hello everyone from Ammar"
+    say-hello-from-bash:
+        runs-on: ubuntu-24.04
+        steps:
+            - run: echo "Hello from bash shell"
+              shell: bash
+    say-hello-from-python:
+        runs-on: ubuntu-24.04
+        steps:
+            - run: print(add(5,10))
+              shell: python
