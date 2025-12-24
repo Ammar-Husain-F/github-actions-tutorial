@@ -15,7 +15,7 @@ jobs:
             - run: print("The sum of 5 and 10 is", 5+10)
               shell: python
 
-    say-hello-action:
+    say-hello-external-action:
         runs-on: ubuntu-24.04
         steps:
             - uses: actions/hello-world-javascript-action@081a6d193d1dcb38460df1e6927486d748730f9d # v1.1
@@ -27,5 +27,6 @@ jobs:
         runs-on: ubuntu-24.04
         needs:
             - execute-python
+            - say-hello-external-action
         steps:
             - run: echo "executed after the python completed"
