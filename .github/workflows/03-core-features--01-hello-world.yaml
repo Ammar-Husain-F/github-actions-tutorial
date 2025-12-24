@@ -8,3 +8,10 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - run: echo "Hello from an inline bash script in a GitHub Action Workflow!"
+
+  added-dependent-Workflow:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo "The first workflow successfully executed"
+    needs: 
+      say-hello-inline-bash
