@@ -8,13 +8,14 @@ jobs:
         runs-on: ubuntu-24.04
         steps:
             - run: echo "Hello everyone from Ammar"
-    say-hello-from-bash:
-        runs-on: ubuntu-24.04
-        steps:
-            - run: echo "Hello from bash shell"
-              shell: bash
-    say-hello-from-python:
+    execute-python:
         runs-on: ubuntu-24.04
         steps:
             - run: print("The sum of 5 and 10 is", 5+10)
               shell: python
+    execute-after-python:
+        runs-on: ubuntu-24.04
+        needs:
+            - execute-python
+        steps:
+            - run: echo "executed after the python completed"
