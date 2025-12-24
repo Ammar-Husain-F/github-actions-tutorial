@@ -16,5 +16,5 @@ jobs:
     say-hello-from-python:
         runs-on: ubuntu-24.04
         steps:
-            - run: print(add(5,10))
+            - run: print(5+10)
               shell: python
